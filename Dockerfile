@@ -9,3 +9,5 @@ USER 1000
 WORKDIR /home/tekton
 
 RUN git config --global --add safe.directory /workspace/source
+
+RUN chown -R $(id -u):$(id -g) /workspace/source
