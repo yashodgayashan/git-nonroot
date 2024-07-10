@@ -10,4 +10,4 @@ WORKDIR /home/tekton
 
 RUN git config --global --add safe.directory /workspace/source
 
-RUN ls 
+RUN ls /workspace/source
