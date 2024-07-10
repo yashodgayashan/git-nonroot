@@ -34,3 +34,12 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKER_USER }}/git-nonroot:${{ github.sha }}
+      
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/arm64
+          push: true
+          tags: ${{ secrets.DOCKER_USER }}/git-nonroot:${{ github.sha }}
